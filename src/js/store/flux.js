@@ -54,9 +54,22 @@ const getState = ({
                     .catch(err => console.error(err))
             },
 
-            agregarFavorito: () => {
+            agregarFavorito: (favoritos) => {
+                console.log("funciona")
+                let store = getStore() // Aca declaro una variable store y guardo la llamada del objeto store
+                setStore({
+                    favoritos: [...store.favoritos, favoritos]
+                }) // aca seteamos el valor de la propiedad de objeto favorito.
+            },
+
+            eliminarFavorito: (favoritos) => {
                 console.log("funciona")
             },
+
+
+
+
+
             loadSomeData: () => {
                 /**
                 	fetch().then().then(data => setStore({ "foo": data.bar }))
