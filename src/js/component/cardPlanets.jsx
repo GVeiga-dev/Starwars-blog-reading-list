@@ -20,7 +20,8 @@ export const Planets = ({nombre, terreno, id}) => {
     <h5 className="card-title">{nombre}</h5>
     <h6 className="card-title">{terreno}</h6>
     {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-    <Link to={"/viewPlanets/"+id} className="btn btn-primary">Detalles de planeta:{id}</Link>
+    <Link to={"/viewPlanets/"+id} className="btn btn-success">Ver más ...</Link>
+    <button className="btn btn-color" onClick={()=>actions.agregarFavorito()}><i className="fa fa-heart"> </i></button>
   </div>
 </div>
 	);

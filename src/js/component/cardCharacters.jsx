@@ -23,8 +23,8 @@ export const Characters = ({nombre, genero, id}) => {
     <p className="card-title">Gender: {genero}</p>
     {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
     <div className="d-flex container">
-    <Link to={"/viewCharacters/"+id} className="btn btn-primary">Ver más ...</Link>
-    <button className="btn" onClick={()=>actions.agregarFavorito()}><i className="fa fa-heart"> </i></button>
+    <Link to={"/viewCharacters/"+id} className="btn btn-success">Ver más ...</Link>
+    <button className="btn btn-color" onClick={()=>actions.agregarFavorito()}><i className="fa fa-heart"> </i></button>
     </div>
   </div>
 </div>
