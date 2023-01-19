@@ -17,7 +17,9 @@ export const Characters = ({nombre, genero, id}) => {
 
 	return (
 			<div className="card d-flex mx-3" style={{width: "18rem"}}>
-  <img src="..." style={{width: "400px", height: "200px"}} className="card-img-top" alt="..."/>
+  <img 
+  src={"https://starwars-visualguide.com/assets/img/characters/"+(id)+".jpg"}
+  style={{width: "400px", height: "200px"}} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{nombre}</h5>
     <p className="card-title">Gender: {genero}</p>

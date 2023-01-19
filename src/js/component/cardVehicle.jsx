@@ -15,9 +15,12 @@ export const Vehicle = ({nombre, modelo, id}) => {
 // },[])
 
 
+
 	return (
 			<div className="card" style={{width: "18rem"}}>
-  <img src="..." className="card-img-top" alt="..."/>
+  <img 
+  src={"https://starwars-visualguide.com/assets/img/vehicles/"+(id)+".jpg"}  
+  className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{nombre}</h5>
     <h6 className="card-title">{modelo}</h6>

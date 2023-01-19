@@ -55,19 +55,23 @@ const getState = ({
             },
 
             agregarFavorito: (favoritos) => {
-                console.log("funciona")
-                let store = getStore() // Aca declaro una variable store y guardo la llamada del objeto store
-                setStore({
-                    favoritos: [...store.favoritos, favoritos]
-                }) // aca seteamos el valor de la propiedad de objeto favorito.
+                // console.log("funciona")
+                let store = getStore() // Aca declaro una variable store y guardo la llamada del objeto store.
+
+                if (favoritos !== "" && !store.favoritos.includes(favoritos)) // solo agrega una vez a favoritos. No deja agregarlo dos veces.
+
+                    setStore({
+                        favoritos: [...store.favoritos, favoritos]
+                    }) // aca seteamos el valor de la propiedad de objeto favorito.
             },
 
             eliminarFavorito: (favoritos) => {
-                console.log("funciona")
+                // console.log("funciona")
+                let store = getStore()
+                setStore({
+                    favoritos: store.favoritos.filter(fav => fav !== favoritos)
+                })
             },
-
-
-
 
 
             loadSomeData: () => {

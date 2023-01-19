@@ -19,12 +19,14 @@ export const ViewVehicles = () => {
       obtenerDetalleDeVehiculo();
     },[])
 
+
+
 return (
   <div>
 	<div className="card mb-3 border-0">
   <div className="row g-0">
     <div className="col-md">
-      <img src="..." style={{ width:"800px", height: "600px" }} className="img-fluid rounded-start" alt="..."/>
+      <img src={"https://starwars-visualguide.com/assets/img/vehicles/"+(params.theid)+".jpg"} style={{ width:"800px", height: "600px" }} className="img-fluid rounded-start" alt="..."/>
     </div>
     <div className="col-md">
       <div className="card-body">
