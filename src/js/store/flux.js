@@ -17,8 +17,11 @@ const getState = ({
                 }
             ],
             personajes: [],
+            detallePersonaje: {},
             vehiculos: [],
+            detalleVehiculo: {},
             planetas: [],
+            detallePlaneta: {},
             favoritos: [],
         },
         actions: {
@@ -35,12 +38,28 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
+            obtenerDetalleDePersonaje: (id) => {
+                fetch("https://swapi.dev/api/people/" + id)
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        detallePersonaje: data
+                    }))
+                    .catch(err => console.error(err))
+            },
 
             obtenerInfoVehiculo: () => {
                 fetch("https://swapi.dev/api/vehicles/")
                     .then(res => res.json())
                     .then(data => setStore({
                         vehiculos: data.results,
+                    }))
+                    .catch(err => console.error(err))
+            },
+            obtenerDetalleDeVehiculo: (id) => {
+                fetch("https://swapi.dev/api/vehicles/" + id)
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        detalleVehiculo: data
                     }))
                     .catch(err => console.error(err))
             },
@@ -53,26 +72,31 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
+            obtenerDetalleDePlaneta: (id) => {
+                fetch("https://swapi.dev/api/planets/" + id)
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        detallePlaneta: data
+                    }))
+                    .catch(err => console.error(err))
+            },
 
             agregarFavorito: (favoritos) => {
                 // console.log("funciona")
-                let store = getStore() // Aca declaro una variable store y guardo la llamada del objeto store.
-
-                if (favoritos !== "" && !store.favoritos.includes(favoritos)) // solo agrega una vez a favoritos. No deja agregarlo dos veces.
-
+                let store = getStore();
+                if (favoritos !== "" && !store.favoritos.includes(favoritos)) //agrega cada item solo una vez a fav.
                     setStore({
                         favoritos: [...store.favoritos, favoritos]
-                    }) // aca seteamos el valor de la propiedad de objeto favorito.
+                    })
             },
 
-            eliminarFavorito: (favoritos) => {
-                // console.log("funciona")
-                let store = getStore()
+            borrarFavorito: (favoritos) => {
+                //console.log("funciona")
+                let store = getStore();
                 setStore({
                     favoritos: store.favoritos.filter(fav => fav !== favoritos)
                 })
             },
-
 
             loadSomeData: () => {
                 /**

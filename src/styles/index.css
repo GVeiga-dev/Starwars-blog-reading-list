@@ -8,5 +8,13 @@
 }
 
 .btn-color {
-    color: #fdc425;
+    color: red;
+}
+
+body {
+    background-image: url(https://www.xtrafondos.com/descargar.php?id=4052&resolucion=2560x1440);
+}
+
+.text-color {
+    color: red
 }
